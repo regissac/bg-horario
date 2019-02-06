@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="bg">
+        <span id="hours"></span>
+    </div>
+    <script>
+        function relogio() {
+
+            var date = new Date();
+
+            document.getElementById('hours').innerHTML = date.getHours() + " : " + date.getMinutes();
+            
+            if (date.getHours() >= 19 && date.getHours() <= 5) {
+                document.getElementById('bg').style.backgroundImage = "linear-gradient( rgb(0, 20, 20),rgb(0, 41, 41))";
+            }
+        }
+
+        setInterval(relogio, 1000);
+    </script>
+</body>
+
+</html>
